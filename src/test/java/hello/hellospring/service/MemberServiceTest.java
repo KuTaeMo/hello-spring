@@ -1,7 +1,7 @@
 package hello.hellospring.service;
 
 import hello.hellospring.domain.Member;
-import hello.hellospring.repository.MemboryMemberRepository;
+import hello.hellospring.repository.MemoryMemberRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -15,12 +15,12 @@ import static org.junit.jupiter.api.Assertions.*;
 class MemberServiceTest {
 
     MemberService memberService;
-    MemboryMemberRepository memberRepository;
+    MemoryMemberRepository memberRepository;
 
     @BeforeEach
     public void beforeEach(){
         // 같은 memberRepository를 사용하기 위해 D.I(생성자 주입)함
-        memberRepository = new MemboryMemberRepository();
+        memberRepository = new MemoryMemberRepository();
         memberService = new MemberService(memberRepository);
     }
 
